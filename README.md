@@ -8,18 +8,21 @@
 _Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- < Provide a short description of your program's functionality. No more than a couple sentences. >
+ The program sets up a dartboard where a game of dartboard is played. It outputs the result of the game: tie or a win with color codes such as red and green. As well as estimates the number pi using the number of darts used and the number of darts missed.
 
 ## GRACE DAYS
-Grace days used for this assignment: < # >
+Grace days used for this assignment: 0
 
-Grace days remaining: < # >/5
+Grace days remaining: 5/5
 
 ## KNOWN BUGS AND INCOMPLETE PARTS:
- < What parts of the project you were not able to complete >
+ All Parts Completed
 
 ## REFERENCES:
- < List any outside resources used >
+ Chapter 5
+ Lab: A Dart Game
+ CS110 Spring 2022
+
 
 ## MISCELLANEOUS COMMENTS:
- < Anything you would like the grader to know >
+ N/A

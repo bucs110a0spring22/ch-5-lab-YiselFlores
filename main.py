@@ -32,6 +32,86 @@ import time
 #                   Your Code Goes Below                #
 #########################################################
 
+ 
+def drawSquare ( darty = None, Width=0, top_left_x=0, 
+ top_left_y=0):
+ darty.up()
+ darty.goto(top_left_x, top_left_y)
+ for i in range(4):
+    darty.down()
+    darty.forward(Width)
+    darty.right(90)
+    
+    
+ 
+   
+def drawLine(darty=None, x_start=0, y_start=0, x_end=0, y_end=0):
+   darty.up()
+   darty.goto(x_start,y_start)
+   darty.down()
+   darty.goto(x_end,y_end) 
+   
+   
+  
+   
+
+def drawCircle(darty=None, radius=0):
+   darty.goto(0,-1)
+   darty.circle(radius, steps=50)
+def setUpDartboard(window, darty):
+  window.setworldcoordinates(-1,-1,1,1)
+  drawSquare(darty, 2, -1, 1)
+  drawLine(darty,-1,0,1,0)
+  drawLine(darty,0,-1,0,1)
+  drawCircle(darty, 1)
+
+def isInCircle(darty=None, circle_center_x=0, circle_center_y=0, radius=0):
+  return darty.distance(circle_center_x,circle_center_y) <= radius
+    
+
+def throwDart(darty=None):
+  x = random.uniform(-1,1)
+  y = random.uniform(-1,1)
+  darty.up()
+  darty.goto(x,y)
+  darty.dot()
+  if isInCircle(darty, 0,0,1) == True:
+    darty.dot("green")
+    return True
+  else:
+    darty.dot("red")
+    return False
+    
+
+
+def playDarts(darty=None):
+  player_one = 0
+  player_two = 0
+  for i in range(5):
+   throwDart(darty)
+  if throwDart(darty) == True:
+     player_one += 1
+  for i in range(5):
+   throwDart(darty)
+  if throwDart(darty) == True:
+   player_two += 1
+  if player_one == player_two:
+    print("its a tie")
+  elif player_one > player_two:
+    print("Player two wins")
+  else:
+    print("Player one wins")
+  
+
+def  montePi(darty=None, num_darts=0):
+  inside_count = 0 
+  for i in range(num_darts):
+       throwDart(darty)
+       if throwDart(darty) == True:
+         inside_count += 1
+  return (inside_count/num_darts) * 4
+        
+  
 
 
 #########################################################
